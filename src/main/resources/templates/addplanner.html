@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Add plans</h1>
+	<div>
+		<div class="col-md-2">
+		<form th:object="${planner}" th:action="@{save}" action="#" method="post">
+		  	
+		  	<label for="name">Name</label>
+			<input type="text" id="name" th:field="*{name}" />
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="date">Date</label>
+			<input type="text" th:field="*{date}" /> 
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="time">Time</label>
+			<input type="text" step="any" th:field="*{time}" />
+			
+				<div style="clear: both; display: block; height: 40px;"></div>
+			<label for="note">Add additional note</label>
+			<input type="note" step="any" th:field="*{note}" />
+			
+		
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+			
+		</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Studentlist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Add planner</h1>
+	<div>
+		<div class="col-md-2">
+			<form th:object="${planner}" th:action="@{save}" action="#" method="post">
+		  	<label for="title">Plan Title</label>
+			<input type="text" id="name" th:field="*{name}" class="form-control"/>
+			
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="date">Date of Plan</label>
+			<input type="text" id="date" th:field="*{date}" class="form-control"/>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="time">Time</label>
+			<input type="text" th:field="*{time}" class="form-control"/>
+
+			<div style="clear: both; display: block; height: 10px;width: 20px"></div>
+		  	<label for="note">Note</label>
+			<input type="text" th:field="*{note}" class="form-control"/>
+    		
+    		
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" class="btn btn-success" value="Save"></input>
+			
+			
+		</form>
+		</div>
+	</div>
+</body>
+</html>
